@@ -67,14 +67,6 @@ func main() {
 
 `go run main.go` and visit `localhost:9000/admin` to see the result!
 
-## Live DEMO
-
-* Live Demo [http://demo.getqor.com/admin](http://demo.getqor.com/admin)
-* Source Code of Live Demo [https://github.com/conku/qor-example](https://github.com/conku/qor-example)
-
-## Documentation
-
-<https://doc.getqor.com/admin>
 
 ## License
 
