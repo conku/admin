@@ -4,6 +4,7 @@ import (
 	"github.com/conku/qor"
 	"github.com/conku/qor/resource"
 	"github.com/conku/qor/utils"
+	"github.com/conku/roles"
 	"github.com/jinzhu/gorm"
 )
 
@@ -17,6 +18,37 @@ type Filter struct {
 	Visible    func(context *Context) bool
 	Handler    func(*gorm.DB, *FilterArgument) *gorm.DB
 	Config     FilterConfigInterface
+	Permission *roles.Permission
+}
+
+// SetPermission set meta's permission
+func (filter *Filter) SetPermission(permission *roles.Permission) {
+	filter.Permission = permission
+	//filter..Permission = permission
+	if filter.Resource != nil {
+		filter.Resource.Permission = permission
+	}
+}
+
+// HasPermission check has permission or not
+func (filter Filter) HasPermission(mode roles.PermissionMode, context *qor.Context) bool {
+	var roles = []interface{}{}
+	for _, role := range context.Roles {
+		roles = append(roles, role)
+	}
+	if filter.Permission != nil {
+		return filter.Permission.HasPermission(mode, roles...)
+	}
+
+	if filter.Resource != nil {
+		return filter.Resource.HasPermission(mode, context)
+	}
+
+	// if filter.baseResource != nil {
+	// 	return filter.baseResource.HasPermission(mode, context)
+	// }
+
+	return true
 }
 
 // SavedFilter saved filter settings
