@@ -8,11 +8,11 @@ import (
 	"reflect"
 	"strings"
 
+	"github.com/conku/gorm"
 	"github.com/conku/qor"
 	"github.com/conku/qor/resource"
 	"github.com/conku/qor/utils"
 	"github.com/conku/roles"
-	"github.com/jinzhu/gorm"
 	"github.com/jinzhu/inflection"
 )
 

@@ -1,8 +1,8 @@
 package admin
 
 import (
+	"github.com/conku/gorm"
 	"github.com/conku/qor"
-	"github.com/jinzhu/gorm"
 )
 
 // Scope register scope for qor resource

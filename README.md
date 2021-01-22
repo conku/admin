@@ -25,7 +25,7 @@ package main
 import (
   "fmt"
   "net/http"
-  "github.com/jinzhu/gorm"
+  "github.com/conku/gorm"
   _ "github.com/mattn/go-sqlite3"
   "github.com/conku/admin"
 )
@@ -66,7 +66,6 @@ func main() {
 ```
 
 `go run main.go` and visit `localhost:9000/admin` to see the result!
-
 
 ## License
 

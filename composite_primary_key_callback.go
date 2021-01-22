@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/jinzhu/gorm"
+	"github.com/conku/gorm"
 )
 
 var primaryKeyRegexp = regexp.MustCompile(`primary_key\[.+_.+\]`)

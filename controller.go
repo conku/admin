@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/conku/gorm"
 	"github.com/conku/responder"
-	"github.com/jinzhu/gorm"
 )
 
 // Controller admin controller

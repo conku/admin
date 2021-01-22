@@ -6,12 +6,12 @@ import (
 	"reflect"
 
 	"github.com/conku/assetfs"
+	"github.com/conku/gorm"
 	"github.com/conku/qor"
 	"github.com/conku/qor/resource"
 	"github.com/conku/qor/utils"
 	"github.com/conku/session"
 	"github.com/conku/session/manager"
-	"github.com/jinzhu/gorm"
 	"github.com/jinzhu/inflection"
 	"github.com/theplant/cldr"
 )

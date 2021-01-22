@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/conku/admin"
-	"github.com/jinzhu/gorm"
+	"github.com/conku/gorm"
 	_ "github.com/mattn/go-sqlite3"
 
 	"github.com/kataras/iris/v12"

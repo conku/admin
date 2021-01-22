@@ -17,11 +17,11 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/conku/gorm"
 	"github.com/conku/qor"
 	"github.com/conku/qor/utils"
 	"github.com/conku/roles"
 	"github.com/conku/session"
-	"github.com/jinzhu/gorm"
 	"github.com/jinzhu/inflection"
 )
 
@@ -310,6 +310,7 @@ type Page struct {
 type PaginationResult struct {
 	Pagination Pagination
 	Pages      []Page
+	Total      int
 }
 
 // Pagination return pagination information
