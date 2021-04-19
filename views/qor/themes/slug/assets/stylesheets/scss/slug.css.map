@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,SADK,CACL,SAAS,CAAC;EACR,OAAO,EAAE,CAAC;CAOX;;AATL,AAGM,SAHG,CACL,SAAS,CAEP,SAAS,CAAC;EACJ,WAAW,EAAE,CAAC;EACd,YAAY,EAAE,IAAI;EAClB,UAAU,EAAE,CAAC;EACb,aAAa,EAAE,CAAC;CACnB;;AART,AAUI,SAVK,CAUL,iBAAiB,CAAC;EAChB,OAAO,EAAE,MAAM;CAChB",
+    "sources": [
+        "slug.scss"
+    ],
+    "names": [],
+    "file": "slug.css"
+}

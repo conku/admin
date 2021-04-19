@@ -1,0 +1,5 @@
+{{if eq .Value.PayType "P908" }}
+<a data-url="/admin/tbusers/{{.Value.Tbusers.ID}}" href="/admin/tbusers/{{.Value.Tbusers.ID}}">{{.Value.Tbusers.Name}}</a>
+{{else if eq .Value.PayType "P909" "P910"}}
+<a data-url="/admin/pdd_stores/{{.Value.PddStores.ID}}" href="/admin/pdd_stores/{{.Value.PddStores.ID}}">{{.Value.PddStores.Name}}</a>
+{{end}}
