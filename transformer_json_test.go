@@ -9,7 +9,7 @@ import (
 	"github.com/conku/admin"
 	. "github.com/conku/admin/tests/dummy"
 	"github.com/conku/gorm"
-	"github.com/jinzhu/now"
+	"github.com/conku/now"
 	"github.com/theplant/testingutils"
 )
 

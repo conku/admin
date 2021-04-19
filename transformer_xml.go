@@ -7,9 +7,9 @@ import (
 	"reflect"
 	"strings"
 
+	"github.com/conku/inflection"
 	"github.com/conku/qor/utils"
 	"github.com/conku/roles"
-	"github.com/jinzhu/inflection"
 )
 
 // XMLTransformer xml transformer

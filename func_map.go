@@ -18,11 +18,11 @@ import (
 	"strings"
 
 	"github.com/conku/gorm"
+	"github.com/conku/inflection"
 	"github.com/conku/qor"
 	"github.com/conku/qor/utils"
 	"github.com/conku/roles"
 	"github.com/conku/session"
-	"github.com/jinzhu/inflection"
 )
 
 // FuncMap funcs map for current context
