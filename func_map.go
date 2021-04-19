@@ -375,7 +375,7 @@ func (context *Context) Pagination() *PaginationResult {
 		pages = append(pages, Page{Page: pagination.Pages, IsLast: true})
 	}
 
-	return &PaginationResult{Pagination: pagination, Pages: pages}
+	return &PaginationResult{Pagination: pagination, Pages: pages, Total: pagination.Total}
 }
 
 func (context *Context) primaryKeyOf(value interface{}) interface{} {
