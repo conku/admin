@@ -580,6 +580,7 @@ func (context *Context) renderMeta(meta *Meta, value interface{}, prefix []strin
 		}
 		return context.hasUpdatePermission(permissioner)
 	}
+
 	funcsMap["render_nested_form"] = generateNestedRenderSections("form")
 
 	defer func() {
