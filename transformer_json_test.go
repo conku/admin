@@ -25,7 +25,7 @@ func TestJSONTransformerEncode(t *testing.T) {
 			Result: &User{
 				Active:       true,
 				Model:        gorm.Model{ID: 1},
-				Name:         "jinzhu",
+				Name:         "conku",
 				Role:         "admin",
 				RegisteredAt: &registeredAt,
 				CreditCard: CreditCard{
@@ -33,7 +33,7 @@ func TestJSONTransformerEncode(t *testing.T) {
 					Issuer: "visa",
 				},
 				Profile: Profile{
-					Name: "jinzhu",
+					Name: "conku",
 					Phone: Phone{
 						Num: "110",
 					},
@@ -63,10 +63,10 @@ func TestJSONTransformerEncode(t *testing.T) {
         },
         "ID": 1,
         "Languages": null,
-        "Name": "jinzhu",
+        "Name": "conku",
         "Profile": {
                 "ID": 0,
-                "Name": "jinzhu",
+                "Name": "conku",
                 "Phone": {
                         "ID": 0,
                         "Num": "110"
