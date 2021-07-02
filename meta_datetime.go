@@ -49,6 +49,8 @@ func (datetimeConfig *DatetimeConfig) ConfigureQorMeta(metaor resource.Metaor) {
 						return ""
 					}
 					return utils.FormatTime(date, timeFormat, context)
+				case int64:
+					return time.Unix(date, 0).Format(timeFormat)
 				default:
 					return date
 				}
