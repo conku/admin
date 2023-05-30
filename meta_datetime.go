@@ -1,3 +1,13 @@
+/*
+ * @Author: rowei
+ * @Date: 2020-08-30 23:45:18
+ * @LastEditors: rowei
+ * @LastEditTime: 2022-06-16 00:36:09
+ * @FilePath: /conku/admin/meta_datetime.go
+ * @Description:修改时间
+ *
+ * Copyright (c) 2022 by rowei/conku.com, All Rights Reserved.
+ */
 package admin
 
 import (
@@ -60,19 +70,23 @@ func (datetimeConfig *DatetimeConfig) ConfigureQorMeta(metaor resource.Metaor) {
 }
 
 // ConfigureQORAdminFilter configure admin filter for datetime
+// rowei edit
 func (datetimeConfig *DatetimeConfig) ConfigureQORAdminFilter(filter *Filter) {
 	if filter.Handler == nil {
 		if dbName := filter.Resource.GetMeta(filter.Name).DBName(); dbName != "" {
+			local, _ := time.LoadLocation("Asia/Shanghai")
 			filter.Handler = func(tx *gorm.DB, filterArgument *FilterArgument) *gorm.DB {
 				if metaValue := filterArgument.Value.Get("Start"); metaValue != nil {
 					if start := utils.ToString(metaValue.Value); start != "" {
-						tx = tx.Where(fmt.Sprintf("%v > ?", dbName), start)
+						startTime, _ := time.ParseInLocation("2006-01-02 15:04:05", start, local)
+						tx = tx.Where(fmt.Sprintf("%v > ?", dbName), startTime.Unix())
 					}
 				}
 
 				if metaValue := filterArgument.Value.Get("End"); metaValue != nil {
 					if end := utils.ToString(metaValue.Value); end != "" {
-						tx = tx.Where(fmt.Sprintf("%v < ?", dbName), end)
+						endTime, _ := time.ParseInLocation("2006-01-02 15:04:05", end, local)
+						tx = tx.Where(fmt.Sprintf("%v < ?", dbName), endTime.Unix())
 					}
 				}
 
