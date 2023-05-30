@@ -1,5 +1,7 @@
 package admin
 
+import "html/template"
+
 // SelectOneConfig meta configuration used for select one
 type SelectTwoConfig struct {
 	Collection               interface{} // []string, [][]string, func(interface{}, *qor.Context) [][]string, func(interface{}, *admin.Context) [][]string
