@@ -381,6 +381,9 @@ func filterResourceByFields(res *Resource, filterFields []filterField, keyword s
 				case "blank":
 					conditions = append(conditions, fmt.Sprintf("%v.%v = ? OR %v.%v IS NULL", tableName, scope.Quote(field.DBName), tableName, scope.Quote(field.DBName)))
 					keywords = append(keywords, "")
+				case "conts":
+					conditions = append(conditions, fmt.Sprintf("%v.%v like ?", tableName, scope.Quote(field.DBName)))
+					keywords = append(keywords, "%"+keyword+"%")
 				default:
 					conditions = append(conditions, fmt.Sprintf("%v.%v like ?", tableName, scope.Quote(field.DBName)))
 					keywords = append(keywords, ""+keyword+"%")
