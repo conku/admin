@@ -197,6 +197,7 @@ func (ac *Controller) Update(context *Context) {
 
 // Delete delete data
 func (ac *Controller) Delete(context *Context) {
+	var action = ac.action
 	res := context.Resource
 	status := http.StatusOK
 
@@ -205,12 +206,28 @@ func (ac *Controller) Delete(context *Context) {
 		status = http.StatusNotFound
 	}
 
-	responder.With("html", func() {
-		http.Redirect(context.Writer, context.Request, path.Join(ac.GetRouter().Prefix, res.ToParam()), http.StatusFound)
-	}).With([]string{"json", "xml"}, func() {
-		context.Writer.WriteHeader(status)
-		context.Encode("OK", map[string]interface{}{"status": "ok"})
-	}).Respond(context.Request)
+	// fmt.Println("context.HasError()", context.HasError())
+
+	if !context.HasError() {
+		responder.With("html", func() {
+			http.Redirect(context.Writer, context.Request, path.Join(ac.GetRouter().Prefix, res.ToParam()), http.StatusFound)
+		}).With([]string{"json", "xml"}, func() {
+			context.Writer.WriteHeader(status)
+			context.Encode("OK", map[string]interface{}{"status": "ok"})
+		}).Respond(context.Request)
+	} else {
+		context.Writer.WriteHeader(HTTPUnprocessableEntity)
+		responder.With("html", func() {
+			context.Execute("action", action)
+		}).With([]string{"json", "xml"}, func() {
+			var errs []string
+			for _, err := range context.GetErrors() {
+				errs = append(errs, err.Error())
+			}
+			context.Encode("OK", map[string]interface{}{"errors": errs, "status": "error"})
+		}).Respond(context.Request)
+	}
+
 }
 
 // Action handle action related requests
