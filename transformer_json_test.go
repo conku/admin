@@ -8,7 +8,7 @@ import (
 
 	"github.com/conku/admin"
 	. "github.com/conku/admin/tests/dummy"
-	"github.com/conku/now"
+	"github.com/jinzhu/now"
 	"github.com/theplant/testingutils"
 	"gorm.io/gorm"
 )
