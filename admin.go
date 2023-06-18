@@ -6,7 +6,6 @@ import (
 	"reflect"
 
 	"github.com/conku/assetfs"
-	"github.com/conku/gorm"
 	"github.com/conku/inflection"
 	"github.com/conku/qor"
 	"github.com/conku/qor/resource"
@@ -14,6 +13,7 @@ import (
 	"github.com/conku/session"
 	"github.com/conku/session/manager"
 	"github.com/theplant/cldr"
+	"gorm.io/gorm"
 )
 
 // AdminConfig admin config struct

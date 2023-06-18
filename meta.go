@@ -7,11 +7,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/conku/gorm"
 	"github.com/conku/qor"
 	"github.com/conku/qor/resource"
 	"github.com/conku/qor/utils"
 	"github.com/conku/roles"
+	"gorm.io/gorm"
 )
 
 // MetaConfigInterface meta config interface

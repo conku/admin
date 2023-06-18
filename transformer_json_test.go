@@ -8,9 +8,9 @@ import (
 
 	"github.com/conku/admin"
 	. "github.com/conku/admin/tests/dummy"
-	"github.com/conku/gorm"
 	"github.com/conku/now"
 	"github.com/theplant/testingutils"
+	"gorm.io/gorm"
 )
 
 func TestJSONTransformerEncode(t *testing.T) {

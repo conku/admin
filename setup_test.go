@@ -6,7 +6,7 @@ import (
 
 	"github.com/conku/admin"
 	. "github.com/conku/admin/tests/dummy"
-	"github.com/conku/gorm"
+	"gorm.io/gorm"
 )
 
 var (

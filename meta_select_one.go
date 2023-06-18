@@ -7,10 +7,10 @@ import (
 	"path"
 	"reflect"
 
-	"github.com/conku/gorm"
 	"github.com/conku/qor"
 	"github.com/conku/qor/resource"
 	"github.com/conku/qor/utils"
+	"gorm.io/gorm"
 )
 
 // SelectOneConfig meta configuration used for select one

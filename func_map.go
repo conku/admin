@@ -17,12 +17,12 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/conku/gorm"
 	"github.com/conku/inflection"
 	"github.com/conku/qor"
 	"github.com/conku/qor/utils"
 	"github.com/conku/roles"
 	"github.com/conku/session"
+	"gorm.io/gorm"
 )
 
 // FuncMap funcs map for current context
@@ -203,9 +203,10 @@ func (context *Context) NewResourceContext(name ...interface{}) *Context {
 }
 
 // URLFor generate url for resource value
-//     context.URLFor(&Product{})
-//     context.URLFor(&Product{ID: 111})
-//     context.URLFor(productResource)
+//
+//	context.URLFor(&Product{})
+//	context.URLFor(&Product{ID: 111})
+//	context.URLFor(productResource)
 func (context *Context) URLFor(value interface{}, resources ...*Resource) string {
 	getPrefix := func(res *Resource) string {
 		var params string

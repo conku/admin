@@ -1,3 +1,9 @@
+## QOR无人维护
+
+// 关闭了
+export GO111MODULE=off
+
+
 ## QOR Admin
 
 Instantly create a beautiful, cross platform, configurable Admin Interface and API for managing your data in minutes.
@@ -25,7 +31,7 @@ package main
 import (
   "fmt"
   "net/http"
-  "github.com/conku/gorm"
+  "gorm.io/gorm"
   _ "github.com/mattn/go-sqlite3"
   "github.com/conku/admin"
 )
